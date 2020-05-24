@@ -79,8 +79,12 @@ WSGI_APPLICATION = 'Traview.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'kpc_test',
+        'USER' : 'root',
+        'PASSWORD' : 'jihyun0127',
+        'HOST' : '49.247.130.147',
+        'PORT' : '3306',
     }
 }
 

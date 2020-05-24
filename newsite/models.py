@@ -22,7 +22,6 @@ class Attraction(models.Model):
     url = models.URLField('', max_length = 400, blank = True)
     #image는 TourAPI에서 나오는 사진 or 개별적으로 구한 사진
     image = models.ImageField(upload_to = '', blank = True)
-
     # num은 리뷰의 개수
     num = models.IntegerField()
 

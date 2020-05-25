@@ -24,4 +24,3 @@ from .serializers import AttractionSerializer
 class AttractionViewSet(viewsets.ModelViewSet):
     queryset = Attraction.objects.all()
     serializer_class = AttractionSerializer
-

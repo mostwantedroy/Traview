@@ -37,7 +37,7 @@ class Attraction(models.Model):
             self.image.save(file_name, File(temp_file))
             super().save()
         else:
-            super.save()
+            super().save()
 
 class Review(models.Model):
     #여행장소 하나당 리뷰가 0개부터 2개 이상이므로,

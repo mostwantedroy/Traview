@@ -47,21 +47,23 @@ class Review(models.Model):
     content = models.TextField()
 '''
 
-class AttTable(models.Model):
+class AttTable1(models.Model):
     id = models.IntegerField(primary_key=True)
     name = models.TextField()
     star = models.IntegerField()
     num = models.IntegerField()
     type = models.ForeignKey('TypeTable', models.DO_NOTHING, db_column='type')
     address = models.TextField(blank=True, null=True)
+    lat = models.TextField(blank=True, null=True)
+    lon = models.TextField(blank=True, null=True)
+    url = models.TextField()
     loid = models.IntegerField()
     location = models.IntegerField()
-    url = models.TextField()
-    image = models.ImageField(upload_to = '', blank = True, db_column = 'image')
+    image = models.TextField(blank=True, null=True)
 
     class Meta:
         managed = False
-        db_table = 'att_table'
+        db_table = 'att_table_1'
 
     def __str__(self) :
         return self.name
@@ -88,7 +90,7 @@ class ChoiceTable(models.Model):
 
 class ReviewTable(models.Model):
     ind = models.AutoField(primary_key=True)
-    id = models.ForeignKey(AttTable, models.DO_NOTHING, db_column='id', blank=True, null=True)
+    id = models.ForeignKey(AttTable1, models.DO_NOTHING, db_column='id', blank=True, null=True)
     user = models.CharField(max_length=50, blank=True, null=True)
     star = models.IntegerField(blank=True, null=True)
     month = models.TextField(blank=True, null=True)

@@ -11,7 +11,9 @@ def index(request):
     return render(request, 'newsite/attraction_list.html', context)
 
 def poster(Attraction):
-    Attraction.objects.order_by('num')
+    middle = []
+    for cat in middle:
+        attraction_list = Attraction.objects.filter(middle = cat).order_by('num').order_by('star')
 
 
 

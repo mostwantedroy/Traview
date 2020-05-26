@@ -70,13 +70,7 @@ START MODULE AREA 2: Page Title 1 Background
 <section class="MOD_PAGETITLEBACKGROUND" data-theme="_bgp">
   <div data-layout="_r">
     <div data-layout="al16">
-        {% if attraction_list %}
-            {% for attraction in attraction_list %}
-                {% if forloop.first %}
-                    <h1>{{ attraction.type }}</h1>
-                {% endif %}
-            {% endfor %}
-        {% endif %}
+        역사관광지
     </div>
   </div>
 </section>
@@ -92,7 +86,7 @@ START MODULE AREA 3: Feature 1
       {% for attraction in attraction_list %}
         <div data-layout="ch8 ec4">
         <a href="#" class="MOD_FEATURE_Container">
-        <img class="MOD_FEATURE_Picture" src="{{ attraction.image.url }}" alt="">
+        <img class="MOD_FEATURE_Picture" src="{{ attraction.image }}" alt="">
         <div class="MOD_FEATURE_TextContainer">
             <p class="MOD_FEATURE_Title" data-theme="_ts2">{{ attraction.name }}</p>
             <p class="MOD_FEATURE_Description">{{ attraction.star }}</p>

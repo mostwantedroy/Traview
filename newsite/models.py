@@ -47,16 +47,17 @@ class Review(models.Model):
     content = models.TextField()
 '''
 
-class Attraction(models.Model):
+class AttTable(models.Model):
     id = models.IntegerField(primary_key=True)
     name = models.TextField()
     star = models.IntegerField()
     num = models.IntegerField()
     type = models.ForeignKey('TypeTable', models.DO_NOTHING, db_column='type')
     address = models.TextField(blank=True, null=True)
-    image = models.TextField()
     loid = models.IntegerField()
     location = models.IntegerField()
+    url = models.TextField()
+    image = models.ImageField(upload_to = '', blank = True, db_column = 'image')
 
     class Meta:
         managed = False
@@ -76,7 +77,7 @@ class Attraction(models.Model):
         else:
             super().save()
 
-class Choice(models.Model):
+class ChoiceTable(models.Model):
     seq = models.IntegerField(primary_key=True)
     user = models.CharField(max_length=50, blank=True, null=True)
     id = models.IntegerField(blank=True, null=True)
@@ -85,9 +86,9 @@ class Choice(models.Model):
         managed = False
         db_table = 'choice_table'
 
-class Review(models.Model):
+class ReviewTable(models.Model):
     ind = models.AutoField(primary_key=True)
-    id = models.ForeignKey(Attraction, models.DO_NOTHING, db_column='id', blank=True, null=True)
+    id = models.ForeignKey(AttTable, models.DO_NOTHING, db_column='id', blank=True, null=True)
     user = models.CharField(max_length=50, blank=True, null=True)
     star = models.IntegerField(blank=True, null=True)
     month = models.TextField(blank=True, null=True)
@@ -101,8 +102,7 @@ class Review(models.Model):
         managed = False
         db_table = 'review_table'
 
-
-class Type(models.Model):
+class TypeTable(models.Model):
     type = models.CharField(primary_key=True, max_length=45)
     seq = models.IntegerField()
     main_type = models.TextField(blank=True, null=True)
@@ -114,7 +114,7 @@ class Type(models.Model):
         unique_together = (('type', 'seq'),)
 
 
-class User(models.Model):
+class UserTable(models.Model):
     seq = models.BigIntegerField(primary_key=True)
     user = models.CharField(max_length=50)
     age = models.TextField(blank=True, null=True)
@@ -136,6 +136,7 @@ class KeywordTable(models.Model):
         managed = False
         db_table = 'keyword_table'
 
+#not available models are written below
 
 class AuthGroup(models.Model):
     name = models.CharField(unique=True, max_length=150)

@@ -3,17 +3,17 @@ from django.shortcuts import render
 # Create your views here.
 
 from django.http import HttpResponse
-from .models import Attraction
+from .models import AttTable
 
 def index(request):
-    attraction_list = Attraction.objects.order_by('name')
+    attraction_list = AttTable.objects.order_by('num')
     context = {'attraction_list' : attraction_list}
     return render(request, 'newsite/attraction_list.html', context)
 
-def poster(Attraction):
+def poster(AttTable):
     middle = []
     for cat in middle:
-        attraction_list = Attraction.objects.filter(middle = cat).order_by('num').order_by('star')
+        attraction_list = AttTable.objects.filter(middle = cat).order_by('num').order_by('star')
 
 
 
@@ -24,5 +24,5 @@ from rest_framework import viewsets
 from .serializers import AttractionSerializer
 
 class AttractionViewSet(viewsets.ModelViewSet):
-    queryset = Attraction.objects.all()
+    queryset = AttTable.objects.all()
     serializer_class = AttractionSerializer

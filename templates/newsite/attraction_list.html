@@ -86,7 +86,7 @@ START MODULE AREA 3: Feature 1
       {% for attraction in attraction_list %}
         <div data-layout="ch8 ec4">
         <a href="#" class="MOD_FEATURE_Container">
-        <img class="MOD_FEATURE_Picture" src="{{ attraction.image }}" alt="">
+        <img class="MOD_FEATURE_Picture" src="{{ attraction.url }}" alt="">
         <div class="MOD_FEATURE_TextContainer">
             <p class="MOD_FEATURE_Title" data-theme="_ts2">{{ attraction.name }}</p>
             <p class="MOD_FEATURE_Description">{{ attraction.star }}</p>

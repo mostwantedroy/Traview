@@ -52,14 +52,14 @@ class AttTable(models.Model):
     name = models.TextField()
     star = models.IntegerField()
     num = models.IntegerField()
-    type = models.ForeignKey('TypeTable', models.DO_NOTHING, db_column='type')
+    type = models.CharField(max_length=45)
     address = models.TextField(blank=True, null=True)
     lat = models.TextField(blank=True, null=True)
     lon = models.TextField(blank=True, null=True)
     url = models.TextField()
     loid = models.IntegerField()
     location = models.IntegerField()
-    image = models.TextField(blank=True, null=True)
+    img_num = models.IntegerField(blank=True, null=True)
 
     class Meta:
         managed = False

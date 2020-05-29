@@ -4,16 +4,21 @@ from django.shortcuts import render
 
 from django.http import HttpResponse
 from .models import AttTable
+from django.db.models import Q
 
 def index(request):
     attraction_list = AttTable.objects.order_by('num')
     context = {'attraction_list' : attraction_list}
     return render(request, 'newsite/attraction_list.html', context)
 
-def poster(AttTable):
-    middle = []
-    for cat in middle:
-        attraction_list = AttTable.objects.filter(middle = cat).order_by('num').order_by('star')
+def poster(request):
+    cat = ["T0101", "T0102", "T0103", "T0201", "T0202", "T0203", "T0301", "T0302"]
+    name = ["공원", "산", "연안", "역사", "문화", "건축", "활동", "힐링"]
+    context = {}
+    for i in len(cat):
+        attraction = AttTable.objects.order_by('-num').filter(type__in = cat[i])
+        context[name[i]] = attraction
+    return render(request, 'newsite/attraction_list.html', context)
 
 # Defining REST API from this line.
 

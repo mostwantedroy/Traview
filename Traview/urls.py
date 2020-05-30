@@ -27,7 +27,7 @@ router.register('attraction',AttractionViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('newsite/', include('newsite.urls')),
+    path('', include('newsite.urls')),
     path('attraction/', include(router.urls)),
 ]
 

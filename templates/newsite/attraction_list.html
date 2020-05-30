@@ -51,6 +51,35 @@
 <body class="default">
 
 <!--
+START MODULE AREA 8: Menu 1
+-->
+<section class="MOD_MENU" data-theme="_bgp">
+  <div data-layout="_r" class="nopadding">
+    <nav class="MOD_MENU_Nav">
+      <p class="MOD_MENU_Title">Menu</p>
+      <svg class="MOD_MENU_Button" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30px" height="30px" viewBox="0 0 30 30" enable-background="new 0 0 30 30" xml:space="preserve">
+        <rect width="30" height="6"/>
+        <rect y="24" width="30" height="6"/>
+        <rect y="12" width="30" height="6"/>
+      </svg>
+      <ul class="AP_Menu_List">
+        <li>
+          <a href="{% url 'newsite:main' %}" data-theme="_bgp">Main Page</a>
+        </li>
+        <li>
+          <a href="{% url 'newsite:browse' %}" data-theme="_bgp">Browse</a>
+        </li>
+        <li>
+          <a href="#" data-theme="_bgp">My Page</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</section>
+<!--
+END MODULE AREA 8: Menu 1
+-->
+<!--
   START MODULE AREA 1: Page Title 1
 -->
 <section>
@@ -70,7 +99,7 @@ START MODULE AREA 2: Page Title 1 Background
 <section class="MOD_PAGETITLEBACKGROUND" data-theme="_bgp">
   <div data-layout="_r">
     <div data-layout="al16">
-        역사관광지
+        <h1>{{ park_title }}</h1>
     </div>
   </div>
 </section>
@@ -82,14 +111,122 @@ START MODULE AREA 3: Feature 1
 -->
 <section class="MOD_FEATURE">
   <div data-layout="_r">
-      {% if attraction_list %}
-      {% for attraction in attraction_list %}
+      {% if park_list %}
+      {% for a in park_list %}
         <div data-layout="ch8 ec4">
         <a href="#" class="MOD_FEATURE_Container">
-        <img class="MOD_FEATURE_Picture" src="{{ attraction.url }}" alt="">
+        <img class="MOD_FEATURE_Picture" src="{{ a.url }}" alt="">
         <div class="MOD_FEATURE_TextContainer">
-            <p class="MOD_FEATURE_Title" data-theme="_ts2">{{ attraction.name }}</p>
-            <p class="MOD_FEATURE_Description">{{ attraction.star }}</p>
+            <p class="MOD_FEATURE_Title" data-theme="_ts2">{{ a.name }}</p>
+            <p class="MOD_FEATURE_Description">{{ a.star }}</p>
+        </div>
+        </a>
+    </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+</section>
+<!--
+END MODULE AREA 3: Feature 1
+-->
+<!--
+START MODULE AREA 2: Page Title 1 Background
+-->
+<section class="MOD_PAGETITLEBACKGROUND" data-theme="_bgp">
+  <div data-layout="_r">
+    <div data-layout="al16">
+        <h1>{{ mountain_title }}</h1>
+    </div>
+  </div>
+</section>
+<!--
+END MODULE AREA 2: Page Title 1 Background
+-->
+<!--
+START MODULE AREA 3: Feature 1
+-->
+<section class="MOD_FEATURE">
+  <div data-layout="_r">
+      {% if mountain_list %}
+      {% for a in mountain_list %}
+        <div data-layout="ch8 ec4">
+        <a href="#" class="MOD_FEATURE_Container">
+        <img class="MOD_FEATURE_Picture" src="{{ a.url }}" alt="">
+        <div class="MOD_FEATURE_TextContainer">
+            <p class="MOD_FEATURE_Title" data-theme="_ts2">{{ a.name }}</p>
+            <p class="MOD_FEATURE_Description">{{ a.star }}</p>
+        </div>
+        </a>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+</section>
+<!--
+END MODULE AREA 3: Feature 1
+-->
+<!--
+START MODULE AREA 2: Page Title 1 Background
+-->
+<section class="MOD_PAGETITLEBACKGROUND" data-theme="_bgp">
+  <div data-layout="_r">
+    <div data-layout="al16">
+        <h1>{{ seashore_title }}</h1>
+    </div>
+  </div>
+</section>
+<!--
+END MODULE AREA 2: Page Title 1 Background
+-->
+<!--
+START MODULE AREA 3: Feature 1
+-->
+<section class="MOD_FEATURE">
+  <div data-layout="_r">
+      {% if seashore_list %}
+      {% for a in seashore_list %}
+        <div data-layout="ch8 ec4">
+        <a href="#" class="MOD_FEATURE_Container">
+        <img class="MOD_FEATURE_Picture" src="{{ a.url }}" alt="">
+        <div class="MOD_FEATURE_TextContainer">
+            <p class="MOD_FEATURE_Title" data-theme="_ts2">{{ a.name }}</p>
+            <p class="MOD_FEATURE_Description">{{ a.star }}</p>
+        </div>
+        </a>
+    </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+</section>
+<!--
+END MODULE AREA 3: Feature 1
+-->
+<!--
+START MODULE AREA 2: Page Title 1 Background
+-->
+<section class="MOD_PAGETITLEBACKGROUND" data-theme="_bgp">
+  <div data-layout="_r">
+    <div data-layout="al16">
+        <h1>{{ history_title }}</h1>
+    </div>
+  </div>
+</section>
+<!--
+END MODULE AREA 2: Page Title 1 Background
+-->
+<!--
+START MODULE AREA 3: Feature 1
+-->
+<section class="MOD_FEATURE">
+  <div data-layout="_r">
+      {% if history_list %}
+      {% for a in history_list %}
+        <div data-layout="ch8 ec4">
+        <a href="#" class="MOD_FEATURE_Container">
+        <img class="MOD_FEATURE_Picture" src="{{ a.url }}" alt="">
+        <div class="MOD_FEATURE_TextContainer">
+            <p class="MOD_FEATURE_Title" data-theme="_ts2">{{ a.name }}</p>
+            <p class="MOD_FEATURE_Description">{{ a.star }}</p>
         </div>
         </a>
     </div>
@@ -101,44 +238,8 @@ START MODULE AREA 3: Feature 1
 END MODULE AREA 3: Feature 1
 -->
 
-<!--
-START MODULE AREA 8: Menu 1
--->
-<section class="MOD_MENU" data-theme="_bgp">
-  <div data-layout="_r" class="nopadding" id = "floatingmenu">
-    <nav class="MOD_MENU_Nav">
-      <p class="MOD_MENU_Title">Menu</p>
-      <svg class="MOD_MENU_Button" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30px" height="30px" viewBox="0 0 30 30" enable-background="new 0 0 30 30" xml:space="preserve">
-        <rect width="30" height="6"/>
-        <rect y="24" width="30" height="6"/>
-        <rect y="12" width="30" height="6"/>
-      </svg>
-      <ul class="AP_Menu_List">
-        <li>
-          <a href="#" data-theme="_bgp">Main Page</a>
-        </li>
-        <li>
-          <a href="#" data-theme="_bgp">Browse</a>
-        </li>
-        <li>
-          <a href="#" data-theme="_bgp">Add location to visit</a>
-        </li>
-        <li>
-          <a href="#" data-theme="_bgp">Recent Activity</a>
-        </li>
-        <li>
-          <a href="#" data-theme="_bgp">My Page</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</section>
-<!--
-END MODULE AREA 8: Menu 1
--->
-
 <script src="{% static 'index.js' %}"></script>
-<script src="{% static 'floating.js' %}"></script>
+
 </body>
 
 </html>

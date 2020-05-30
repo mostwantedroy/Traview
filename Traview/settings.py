@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'Traview.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE' : 'django.db.backends.mysql',
-        'NAME' : 'kpc_test',
+        'NAME' : 'test_db',
         'USER' : 'root',
         'PASSWORD' : 'jihyun0127',
         'HOST' : '49.247.130.147',
@@ -131,6 +131,6 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-MEDIA_URL = '49.247.130.147/media/'
+MEDIA_URL = '/media/'
 
-MEDIA_ROOT = os.path.join('49.247.130.147', 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

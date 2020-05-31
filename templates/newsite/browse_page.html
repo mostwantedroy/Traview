@@ -3,18 +3,42 @@
   <head>
   <meta charset="utf-8">
     <title>HTML</title>
-    <style>
-      * {
-        font-size: 16px;
-        font-family: Consolas, sans-serif;
-      }
-    </style>
   </head>
   <body>
+    <select name="large">
+        <option value="">대분류</option>
+        <option value="자연">자연</option>
+        <option value="인문">인문</option>
+        <option value="레저">레저</option>
+    </select>
+    <select name="mid">
+        <option value="">중분류</option>
+        <option value="자연">자연</option>
+        <option value="인문">인문</option>
+        <option value="레저">레저</option>
+    </select>
+        <select name="small">
+        <option value="">소분류</option>
+        <option value="자연">자연</option>
+        <option value="인문">인문</option>
+        <option value="레저">레저</option>
+    </select>
     <form method="get" action="form-action.html">
-      <p>Color</p>
-      <label><input type="checkbox" name="color" value="blue" checked> Blue</label>
-      <label><input type="checkbox" name="color" value="red"> Red</label>
+      <p>분위기</p>
+        <label><input type="checkbox" name="mood" value="exotic"> Exotic</label>
+        <label><input type="checkbox" name="mood" value="calm"> Calm</label>
+        <label><input type="checkbox" name="mood" value="crowded"> Crowded</label>
+        <label><input type="checkbox" name="mood" value="peaceful"> peaceful</label>
+        <p>비용</p>
+         <label><input type="checkbox" name="cost" value="expensive"> Expensive</label>
+        <label><input type="checkbox" name="cost" value="worth"> Worth</label>
+        <label><input type="checkbox" name="cost" value="cheap"> Cheap</label>
+        <label><input type="checkbox" name="cost" value="reasonable"> Reasonable</label>
+        <p>평가</p>
+         <label><input type="checkbox" name="valuation" value="recommended"> Recommended</label>
+        <label><input type="checkbox" name="valuation" value="understated"> Understated</label>
+        <label><input type="checkbox" name="valuation" value="accessible"> Accessible</label>
+        <label><input type="checkbox" name="valuation" value="romantic"> Romantic</label>
       <p><input type="submit" value="Submit"> <input type="reset" value="Reset"></p>
     </form>
   </body>

@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'Traview.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE' : 'django.db.backends.mysql',
-        'NAME' : 'test_db',
+        'NAME' : 'kpc_test',
         'USER' : 'root',
         'PASSWORD' : 'jihyun0127',
         'HOST' : '49.247.130.147',

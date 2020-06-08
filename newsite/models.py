@@ -22,8 +22,8 @@ class AttTable(models.Model):
         managed = False
         db_table = 'att_table'
 
-    def __str__(self):
-        return self.name
+    #def __str__(self):
+       # return self.name
 
 class ChoiceTable(models.Model):
     choice_num = models.IntegerField(primary_key=True)

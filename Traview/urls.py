@@ -25,7 +25,6 @@ from django.conf.urls import url
 router = routers.DefaultRouter()
 router.register('attraction', AttractionViewSet)
 router.register('code', CodeViewSet)
-router.register('keyword', KeywordViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

@@ -34,13 +34,9 @@ from rest_framework import viewsets
 from .serializers import *
 
 class AttractionViewSet(viewsets.ModelViewSet):
-    queryset = AttTable.objects.all()
-    serializer_class = AttractionSerializer
+    queryset = KeywordTable.objects.all().select_related('id')
+    serializer_class = KeywordSerializer
 
 class CodeViewSet(viewsets.ModelViewSet):
     queryset = CodeTable.objects.all()
     serializer_class = CodeSerializer
-
-class KeywordViewSet(viewsets.ModelViewSet):
-    queryset = KeywordTable.objects.all()
-    serializer_class = KeywordSerializer

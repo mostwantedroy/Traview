@@ -92,7 +92,6 @@ DATABASES = {
         'PASSWORD' : 'jihyun0127',
         'HOST' : '49.247.130.147',
         'PORT' : '3306',
-        'CONN_MAX_AGE': 3600,
     }
 }
 

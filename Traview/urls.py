@@ -18,12 +18,14 @@ from django.urls import path, include
 from . import settings
 from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
 from rest_framework import routers
-from newsite.views import AttractionViewSet
+from newsite.views import *
 
 from django.conf.urls import url
 
 router = routers.DefaultRouter()
-router.register('attraction',AttractionViewSet)
+router.register('attraction', AttractionViewSet)
+router.register('code', CodeViewSet)
+router.register('keyword', KeywordViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

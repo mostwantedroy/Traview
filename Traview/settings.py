@@ -42,6 +42,13 @@ INSTALLED_APPS = [
     'rest_framework',
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES' : (
+        'newsite.renders.UTF8JSONRender',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    )
+}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -85,9 +92,13 @@ DATABASES = {
         'PASSWORD' : 'jihyun0127',
         'HOST' : '49.247.130.147',
         'PORT' : '3306',
+        'CONN_MAX_AGE': 3600,
     }
 }
 
+DATABASES_ROUTERS = [
+    'newsite.routers.MultiDBRouter',
+]
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators

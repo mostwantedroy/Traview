@@ -8,82 +8,87 @@ from utils.file import download, get_buffer_ext
 
 class AttTable(models.Model):
     id = models.IntegerField(primary_key=True)
-    name = models.TextField()
-    star = models.IntegerField()
-    num = models.IntegerField()
-    type = models.CharField(max_length=45)
-    type_name = models.CharField(max_length=45)
-    address = models.CharField(max_length=100)
-    lat = models.TextField(blank=True, null=True)
-    lon = models.TextField(blank=True, null=True)
-    url = models.TextField()
-    loid = models.IntegerField()
+    name = models.CharField(max_length=45, blank=True, null=True)
+    star = models.IntegerField(blank=True, null=True)
+    num = models.IntegerField(blank=True, null=True)
+    type = models.CharField(max_length=45, blank=True, null=True)
+    address = models.TextField(blank=True, null=True)
+    lat = models.FloatField(blank=True, null=True)
+    lon = models.FloatField(blank=True, null=True)
+    location_code = models.CharField(max_length=45, blank=True, null=True)
+    image = models.TextField(blank=True, null=True)
 
     class Meta:
         managed = False
         db_table = 'att_table'
 
-    def __str__(self) :
+    def __str__(self):
         return self.name
 
 class ChoiceTable(models.Model):
-    seq = models.IntegerField(primary_key=True)
-    user = models.CharField(max_length=50, blank=True, null=True)
-    id = models.IntegerField(blank=True, null=True)
+    choice_num = models.IntegerField(primary_key=True)
+    id = models.ForeignKey(AttTable, models.DO_NOTHING, db_column='id')
+    user = models.ForeignKey('UserTable', models.DO_NOTHING, db_column='user')
 
     class Meta:
         managed = False
         db_table = 'choice_table'
 
+
+class CodeDef(models.Model):
+    code = models.CharField(primary_key=True, max_length=45)
+    code_name = models.CharField(max_length=45)
+
+    class Meta:
+        managed = False
+        db_table = 'code_def'
+
+
+class CodeTable(models.Model):
+    detail_code = models.CharField(primary_key=True, max_length=45)
+    detail_name = models.CharField(max_length=45)
+    code = models.ForeignKey(CodeDef, models.DO_NOTHING, db_column='code')
+
+    class Meta:
+        managed = False
+        db_table = 'code_table'
+
+
+class KeywordTable(models.Model):
+    id = models.OneToOneField(AttTable, models.DO_NOTHING, related_name = 'item', db_column='id', primary_key=True)
+    valuation = models.CharField(max_length=45, blank=True, null=True)
+    view = models.CharField(max_length=45, blank=True, null=True)
+    cost = models.CharField(max_length=45, blank=True, null=True)
+    total = models.TextField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'keyword_table'
+
 class ReviewTable(models.Model):
-    ind = models.AutoField(primary_key=True)
-    id = models.ForeignKey(AttTable, models.DO_NOTHING, db_column='id', blank=True, null=True)
-    user = models.CharField(max_length=50, blank=True, null=True)
-    star = models.IntegerField(blank=True, null=True)
-    month = models.TextField(blank=True, null=True)
-    review = models.TextField(blank=True, null=True)
-    seq = models.ForeignKey('UserTable', models.DO_NOTHING, db_column='seq', blank=True, null=True)
-    keyword1 = models.CharField(max_length=45, blank=True, null=True)
-    keyword2 = models.CharField(max_length=45, blank=True, null=True)
-    keyword3 = models.CharField(max_length=45, blank=True, null=True)
+    review_num = models.AutoField(primary_key=True)
+    id = models.ForeignKey(AttTable, models.DO_NOTHING, db_column='id')
+    user = models.ForeignKey('UserTable', models.DO_NOTHING, db_column='user')
+    star = models.IntegerField()
+    month = models.CharField(max_length=45)
+    review = models.TextField()
 
     class Meta:
         managed = False
         db_table = 'review_table'
 
-class TypeTable(models.Model):
-    type = models.CharField(primary_key=True, max_length=45)
-    seq = models.IntegerField()
-    main_type = models.TextField(blank=True, null=True)
-    middle_type = models.TextField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'type_table'
-        unique_together = (('type', 'seq'),)
-
 
 class UserTable(models.Model):
-    seq = models.BigIntegerField(primary_key=True)
-    user = models.CharField(max_length=50)
-    age = models.TextField(blank=True, null=True)
-    sex = models.TextField(blank=True, null=True)
+    user = models.CharField(primary_key=True, max_length=45)
+    age = models.IntegerField(blank=True, null=True)
+    sex = models.CharField(max_length=45, blank=True, null=True)
     addr = models.TextField(blank=True, null=True)
-    pw = models.TextField(db_column='PW', blank=True, null=True)  # Field name made lowercase.
-    email = models.TextField(blank=True, null=True)
+    pw = models.CharField(db_column='PW', max_length=45, blank=True, null=True)  # Field name made lowercase.
+    email = models.CharField(max_length=45, blank=True, null=True)
 
     class Meta:
         managed = False
         db_table = 'user_table'
-        unique_together = (('seq', 'user'),)
-
-class KeywordTable(models.Model):
-    keyword = models.IntegerField(primary_key=True)
-    keyname = models.CharField(max_length=45)
-
-    class Meta:
-        managed = False
-        db_table = 'keyword_table'
 
 #not available models are written below
 

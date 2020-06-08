@@ -6,5 +6,5 @@ app_name = 'newsite'
 
 urlpatterns = [
     path('', views.poster, name = 'main'),
-    path('browse/',views.browse, name = 'browse')
+    path('browse/',views.browse, name = 'browse'),
 ]

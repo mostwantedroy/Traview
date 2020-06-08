@@ -3,13 +3,16 @@ from django.shortcuts import render
 # Create your views here.
 
 from django.http import HttpResponse
-from .models import AttTable
+from .models import *
 from django.db.models import Q
 
 def browse(request):
-    #attraction_list = AttTable.objects.order_by('num')
-    #context = {'attraction_list' : attraction_list}
-    return render(request, 'newsite/browse_page.html')
+    context = {}
+    cat1 = ["인문", "자연", "레저"]
+    cat2 = ["공원", "산", "연안", "역사", "문화", "건축", "활동", "힐링"]
+    cat3 = []
+    keyword = ["무드", "비용", "평가"]
+    return render(request, 'newsite/browse_page.html', context)
 
 def poster(request):
     cat = ["T0101", "T0102", "T0103", "T0201", "T0202", "T0203", "T0301", "T0302"]
@@ -28,8 +31,16 @@ def poster(request):
 # Defining REST API from this line.
 
 from rest_framework import viewsets
-from .serializers import AttractionSerializer
+from .serializers import *
 
 class AttractionViewSet(viewsets.ModelViewSet):
-    queryset = AttTable.objects.filter(star = 50)
+    queryset = AttTable.objects.all()
     serializer_class = AttractionSerializer
+
+class CodeViewSet(viewsets.ModelViewSet):
+    queryset = CodeTable.objects.all()
+    serializer_class = CodeSerializer
+
+class KeywordViewSet(viewsets.ModelViewSet):
+    queryset = KeywordTable.objects.all()
+    serializer_class = KeywordSerializer

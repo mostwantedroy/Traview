@@ -13,8 +13,8 @@ class AttTableAdmin(admin.ModelAdmin):
 class CodeTableAdmin(admin.ModelAdmin):
     model = CodeTable
     list_per_page = 25
-    list_display = ('detail_code', )
-    search_fields = ('detail_code', )
+    list_display = ('detail_code', 'code', 'detail_name', )
+    search_fields = ('detail_code', 'code', 'detail_name', )
 
 class KeywordTableAdmin(admin.ModelAdmin):
     model = KeywordTable

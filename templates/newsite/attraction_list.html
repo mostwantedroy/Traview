@@ -67,7 +67,7 @@ START MODULE AREA 8: Menu 1
           <a href="{% url 'newsite:main' %}" data-theme="_bgp">Main Page</a>
         </li>
         <li>
-          <a href="{% url 'newsite:browse' %}" data-theme="_bgp">Browse</a>
+          <a href="{% url 'newsite:browse' %}" data-theme="_bgp">Searching</a>
         </li>
         <li>
           <a href="#" data-theme="_bgp">My Page</a>
@@ -88,7 +88,7 @@ END MODULE AREA 8: Menu 1
 <section>
   <div data-layout="_r">
     <div data-layout="al16">
-      <h1>Traview</h1>
+      <h1>Your Recommend Attactions</h1>
     </div>
   </div>
 </section>
@@ -121,6 +121,7 @@ START MODULE AREA 3: Feature 1
         <img class="MOD_FEATURE_Picture" src="{{ a.image }}" alt="">
         <div class="MOD_FEATURE_TextContainer">
             <p class="MOD_FEATURE_Title" data-theme="_ts2">{{ a.name }}</p>
+            <p class="MOD_FEATURE_Description">{{ a.address }}</p>
             <p class="MOD_FEATURE_Description">{{ a.star }}</p>
         </div>
         </a>
@@ -157,6 +158,7 @@ START MODULE AREA 3: Feature 1
         <img class="MOD_FEATURE_Picture" src="{{ a.image }}" alt="">
         <div class="MOD_FEATURE_TextContainer">
             <p class="MOD_FEATURE_Title" data-theme="_ts2">{{ a.name }}</p>
+            <p class="MOD_FEATURE_Description">{{ a.address }}</p>
             <p class="MOD_FEATURE_Description">{{ a.star }}</p>
         </div>
         </a>
@@ -193,6 +195,7 @@ START MODULE AREA 3: Feature 1
         <img class="MOD_FEATURE_Picture" src="{{ a.image }}" alt="">
         <div class="MOD_FEATURE_TextContainer">
             <p class="MOD_FEATURE_Title" data-theme="_ts2">{{ a.name }}</p>
+            <p class="MOD_FEATURE_Description">{{ a.address }}</p>
             <p class="MOD_FEATURE_Description">{{ a.star }}</p>
         </div>
         </a>
@@ -229,6 +232,7 @@ START MODULE AREA 3: Feature 1
         <img class="MOD_FEATURE_Picture" src="{{ a.image }}" alt="">
         <div class="MOD_FEATURE_TextContainer">
             <p class="MOD_FEATURE_Title" data-theme="_ts2">{{ a.name }}</p>
+            <p class="MOD_FEATURE_Description">{{ a.address }}</p>
             <p class="MOD_FEATURE_Description">{{ a.star }}</p>
         </div>
         </a>

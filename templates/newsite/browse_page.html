@@ -1,45 +1,155 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'modules.css' %}">
+
 <!doctype html>
 <html lang="ko">
-  <head>
-  <meta charset="utf-8">
-    <title>HTML</title>
-  </head>
-  <body>
-    <select name="large">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Traview</title>
+	<!-- Canonical URL usage -->
+	<link rel="canonical" href="https://aperitif.io/">
+
+	<!-- Facebook Open Graph -->
+	<meta property="og:url"                content="https://aperitif.io/" />
+	<meta property="og:title"              content="Aperitif | The web template generator" />
+	<meta property="og:description"        content="Aperitif is a rapid web template generation tool." />
+	<meta property="og:image"              content="https://aperitif.io/img/aperitif-facebook.png" />
+	<meta property="og:image:width"        content="1200" />
+	<meta property="og:image:height"       content="630" />
+
+	<!-- Twitter Cards -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@Aperitif">
+	<meta name="twitter:creator" content="@Aperitif">
+	<meta name="twitter:title" content="Aperitif - The web template generator">
+	<meta name="twitter:description" content="Aperitif is a rapid web template generation tool.">
+	<meta name="twitter:image" content="https://aperitif.io/img/aperitif-card.png">
+
+	<!-- Google Structured Data -->
+	<script type="application/ld+json">
+	{
+	"@context" : "http://schema.org",
+	"@type" : "SoftwareApplication",
+	"name" : "Aperitif",
+	"image" : "https://aperitif.io/img/aperitif-logo.svg",
+	"url" : "https://aperitif.io/",
+	"author" : {
+	  "@type" : "Person",
+	  "name" : "Octavector"
+	},
+	"datePublished" : "2017-MM-DD",
+	"applicationCategory" : "HTML"
+	}
+	</script>
+</head>
+<!-- End Head -->
+<section class="MOD_MENU" data-theme="_bgp">
+  <div data-layout="_r" class="nopadding">
+    <nav class="MOD_MENU_Nav">
+      <p class="MOD_MENU_Title">Menu</p>
+      <svg class="MOD_MENU_Button" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30px" height="30px" viewBox="0 0 30 30" enable-background="new 0 0 30 30" xml:space="preserve">
+        <rect width="30" height="6"/>
+        <rect y="24" width="30" height="6"/>
+        <rect y="12" width="30" height="6"/>
+      </svg>
+      <ul class="AP_Menu_List">
+        <li>
+          <a href="{% url 'newsite:main' %}" data-theme="_bgp">Main Page</a>
+        </li>
+        <li>
+          <a href="{% url 'newsite:browse' %}" data-theme="_bgp">Searching</a>
+        </li>
+        <li>
+          <a href="#" data-theme="_bgp">My Page</a>
+        </li>
+          <li>
+            <a href="/api/attraction" data-theme="_bgp">API</a>
+          </li>
+      </ul>
+    </nav>
+  </div>
+</section>
+
+<section>
+  <div data-layout="_r">
+    <div data-layout="al16">
+      <h1>Searching Page</h1>
+    </div>
+  </div>
+</section>
+
+<body>
+<section>
+  <div data-layout="_r">
+    <div data-layout="al16">
+    <h2>Category</h2>
+    <select name="large" style="width:200px; height:50px;font-size:30px;">
         <option value="">대분류</option>
-        <option value="자연">자연</option>
-        <option value="인문">인문</option>
-        <option value="레저">레저</option>
+        {% if large %}
+            {% for element in large %}
+            <option value= {{ element.code_name }}>{{ element.code_name }}</option>
+            {% endfor %}
+        {% endif %}
     </select>
-    <select name="mid">
+    <select name ="mid" id = "mid" style="width:200px; height:50px;font-size:30px;">
         <option value="">중분류</option>
-        <option value="자연">자연</option>
-        <option value="인문">인문</option>
-        <option value="레저">레저</option>
+        {% if medium %}
+            {% for element in medium %}
+                <option value= "{{ element.detail_name }}">{{ element.detail_name }}</option>
+            {% endfor %}
+        {% endif %}
     </select>
-        <select name="small">
+    <select name="small" id = "small" style="width:200px; height:50px;font-size:30px;">
         <option value="">소분류</option>
-        <option value="자연">자연</option>
-        <option value="인문">인문</option>
-        <option value="레저">레저</option>
+        {% if small %}
+            {% for element in small %}
+                <option value= "{{ element.detail_name }}">{{ element.detail_name }}</option>
+            {% endfor %}
+        {% endif %}
     </select>
-    <form method="get" action="form-action.html">
-      <p>분위기</p>
-        <label><input type="checkbox" name="mood" value="exotic"> Exotic</label>
-        <label><input type="checkbox" name="mood" value="calm"> Calm</label>
-        <label><input type="checkbox" name="mood" value="crowded"> Crowded</label>
-        <label><input type="checkbox" name="mood" value="peaceful"> peaceful</label>
-        <p>비용</p>
-         <label><input type="checkbox" name="cost" value="expensive"> Expensive</label>
-        <label><input type="checkbox" name="cost" value="worth"> Worth</label>
-        <label><input type="checkbox" name="cost" value="cheap"> Cheap</label>
-        <label><input type="checkbox" name="cost" value="reasonable"> Reasonable</label>
-        <p>평가</p>
-         <label><input type="checkbox" name="valuation" value="recommended"> Recommended</label>
-        <label><input type="checkbox" name="valuation" value="understated"> Understated</label>
-        <label><input type="checkbox" name="valuation" value="accessible"> Accessible</label>
-        <label><input type="checkbox" name="valuation" value="romantic"> Romantic</label>
-      <p><input type="submit" value="Submit"> <input type="reset" value="Reset"></p>
-    </form>
-  </body>
+    <h2>Keyword</h2>
+    <select name="large" style="width:200px; height:50px;font-size:30px;">
+        <option value="">분위기</option>
+        {% if view %}
+            {% for element in view %}
+            <option value= {{ element }}>{{ element }}</option>
+            {% endfor %}
+        {% endif %}
+    </select>
+    <select name ="mid" id = "mid" style="width:200px; height:50px;font-size:30px;">
+        <option value="">비용</option>
+        {% if cost %}
+            {% for element in cost %}
+                <option value= "{{ element }}">{{ element }}</option>
+            {% endfor %}
+        {% endif %}
+    </select>
+    <select name="small" id = "small" style="width:200px; height:50px;font-size:30px;">
+        <option value="">평가</option>
+        {% if valuation %}
+            {% for element in valuation %}
+                <option value= "{{ element }}">{{ element }}</option>
+            {% endfor %}
+        {% endif %}
+    </select>
+    <p>
+        <style type = "text/css">
+            #searchbutton
+            {
+                 margin-top: 50px;
+                 margin-left: 510px;
+            }
+        </style>
+        <button id = "searchbutton" type="button" class="btn btn-primary btn-lg">검색하기</button>
+    </p>
+    </div>
+  </div>
+
+</section>
+</body>
+
+
 </html>

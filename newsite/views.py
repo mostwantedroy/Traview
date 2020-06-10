@@ -39,7 +39,8 @@ def browse(request):
         'disappointing', 'spectacular', 'wonderful', 'awesome', 'beautiful', 'popular', 'interactive', 'magical',
         'historical', 'excellent', 'likely', 'special', 'weird', 'cheerful', 'peaceful', 'memorial', 'warm', 'futuristic',
         'organized', 'interesting', 'glorious', 'confortable', 'enjoyable', 'stimulating', 'young', 'picturesque',
-        'manicured', 'traditional', 'lovely', 'understated', 'famous', 'funny', 'recommend', 'exotic', 'instagramable', 'amazing', 'foggy', 'walkable', 'dirt', 'diverse', 'best', 'stunning', 'renowned', 'breathtaking', 'fun'
+        'manicured', 'traditional', 'lovely', 'understated', 'famous', 'funny', 'recommend', 'exotic', 'instagramable',
+        'amazing', 'foggy', 'walkable', 'dirt', 'diverse', 'best', 'stunning', 'renowned', 'breathtaking', 'fun'
     ]
     value_keyword = [view, cost, valuation]
     for i in range(3):
@@ -55,7 +56,7 @@ def poster(request):
     for i in range(8):
         context[name_title[i]] = name_value[i]
     for i in range(8):
-        attraction = AttTable.objects.order_by('-num').filter(type__contains = cat[i])[:4]
+        attraction = AttTable.objects.order_by('-num').filter(id__contains = '0').filter(type__contains = cat[i])[:4]
         context[name_list[i]] = attraction
 
     return render(request, 'newsite/attraction_list.html', context)

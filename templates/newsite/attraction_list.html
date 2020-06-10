@@ -67,13 +67,13 @@ START MODULE AREA 8: Menu 1
           <a href="{% url 'newsite:main' %}" data-theme="_bgp">Main Page</a>
         </li>
         <li>
-          <a href="{% url 'newsite:browse' %}" data-theme="_bgp">Searching Page</a>
+          <a href="{% url 'newsite:browse' %}" data-theme="_bgp">Searching</a>
         </li>
         <li>
           <a href="#" data-theme="_bgp">My Page</a>
         </li>
           <li>
-            <a href="" data-theme="_bgp">Logout</a>
+            <a href="" data-theme="_bgp">Login</a>
           </li>
       </ul>
     </nav>
@@ -88,7 +88,7 @@ END MODULE AREA 8: Menu 1
 <section>
   <div data-layout="_r">
     <div data-layout="al16">
-      <h1>Your Recommend Attactions</h1>
+      <h1>Traview</h1>
     </div>
   </div>
 </section>
@@ -167,7 +167,15 @@ START MODULE AREA 3: Feature 1
         <div class="MOD_FEATURE_TextContainer">
             <p class="MOD_FEATURE_Title" data-theme="_ts2">{{ a.name }}</p>
             <p class="MOD_FEATURE_Description">{{ a.address }}</p>
-            <p class="MOD_FEATURE_Description">{{ a.star }}</p>
+            {% if forloop.first %}
+            <p class="MOD_FEATURE_Description">peaceful / free / approachable</p>
+                {% elif forloop.counter0 == 1 %}
+                <p class="MOD_FEATURE_Description">photogenic / free / walkable</p>
+                {% elif forloop.counter0 == 2 %}
+                <p class="MOD_FEATURE_Description">wide / free / tough</p>
+                {% else %}
+                <p class="MOD_FEATURE_Description">spacious / free / instagramable</p>
+            {% endif %}
         </div>
         </a>
         </div>

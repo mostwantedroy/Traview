@@ -9,7 +9,7 @@ class AttractionSerializer(serializers.ModelSerializer):
 class CodeSerializer(serializers.ModelSerializer):
     class Meta:
         model = CodeTable
-        fields = ('detail_code', 'detail_name', 'code', 'detail')
+        fields = ('detail_code', 'detail_name', 'code')
 
 class KeywordSerializer(serializers.ModelSerializer):
     attraction = AttractionSerializer(source = 'id', read_only = True)

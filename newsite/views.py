@@ -56,7 +56,7 @@ def poster(request):
     for i in range(8):
         context[name_title[i]] = name_value[i]
     for i in range(8):
-        attraction = AttTable.objects.order_by('-num').filter(id__contains = '0').filter(type__contains = cat[i])[:4]
+        attraction = AttTable.objects.order_by('-num').filter(type__contains = cat[i])[:4]
         context[name_list[i]] = attraction
 
     return render(request, 'newsite/attraction_list.html', context)

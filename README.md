@@ -1,1 +1,1 @@
-https://github.com/radiantprism/Traview/introduction/Project_proposal_Traview.pdf
+https://github.com/radiantprism/Traview/blob/master/introduction/Project_proposal_Traview.pdf

@@ -12,5 +12,4 @@
 - 방문한 여행지에 대한 추천(협엽 필터링)
 - 여행지의 특징 기반 추천(컨텐츠 기반 필터링)
 
-전체 Portfolio
-https://github.com/radiantprism/Traview/blob/master/introduction/Project_proposal_Traview.pdf
+전체 Portfolio : https://github.com/radiantprism/Traview/blob/master/introduction/Project_proposal_Traview.pdf

@@ -6,6 +6,8 @@
 - Nginx, Gunicorn 활용 WAS 서버 개발
 - 어플 서비스를 위한 REST API 개발
 
+<img src="https://github.com/radiantprism/Traview/blob/master/tourism_feature.PNG">
+
 2. 여행 리뷰 데이터 기반 NER 모델 개발
 - 세계 최대 여행지 리뷰 사이트 TripAdvisor에서 리뷰 데이터 크롤링(Selenium)
 - 리뷰 데이터에 존재하는 여행지의 분위기, 가격, 평가 정보를 추출하는 Bi-LSTM 모델 훈련(사전 기반 BIO Tagging)

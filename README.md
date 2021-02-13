@@ -1,6 +1,6 @@
 # 딥러닝 기반 여행지 추천 서비스
 
-<img src="traview architecture.png">
+<img src="./traview_architecture.png">
 
 1. Django 활용 웹앱 백엔드 개발
 - Nginx, Gunicorn 활용 WAS 서버 개발

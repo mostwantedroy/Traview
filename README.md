@@ -2,7 +2,7 @@
 
 1. Django 활용 웹앱 백엔드 개발
 - Nginx, Gunicorn 활용 WAS 서버 개발
-- REST API 설계
+- 어플 서비스를 위한 REST API 개발
 
 2. 여행 리뷰 데이터 기반 NER 모델 개발
 - 세계 최대 여행지 리뷰 사이트 TripAdvisor에서 리뷰 데이터 크롤링(Selenium)

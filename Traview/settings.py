@@ -87,10 +87,10 @@ WSGI_APPLICATION = 'Traview.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE' : 'django.db.backends.mysql',
-        'NAME' : 'kpc_test',
-        'USER' : 'root',
-        'PASSWORD' : 'jihyun0127',
-        'HOST' : '49.247.130.147',
+        'NAME' : 'schema',
+        'USER' : 'admin',
+        'PASSWORD' : '81196103',
+        'HOST' : 'database.csiyuetwakxo.ap-northeast-2.rds.amazonaws.com',
         'PORT' : '3306',
     }
 }

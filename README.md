@@ -17,6 +17,9 @@
 ## 여행지 특징 추출
 <img src="https://github.com/radiantprism/Traview/blob/master/tourism_feature.PNG">
 
+## Bi-LSTM 모델 설계
+<img src="https://github.com/radiantprism/Traview/blob/master/Bi-LSTM blueprint.PNG">
+
 3. 사용자 취향 맞춤 여행지 추천 시스템 개발
 - 방문한 여행지에 대한 추천(협엽 필터링)
 - 여행지의 특징 기반 추천(컨텐츠 기반 필터링)

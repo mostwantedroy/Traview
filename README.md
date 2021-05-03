@@ -1,9 +1,9 @@
 # 딥러닝 기반 여행지 추천 서비스
 
-진행기간 : 2020/04/01 ~ 2020/06/12
-주요내용 : AI 기반 여행지 추천 서비스
-본인이 기여한 점 : 웹앱 서비스 백엔드 개발, 여행지 추천 시스템 개발, PM
-사용한 기술스택 및 지식 : Tensorflow, Scikit-learn, Django, 추천 시스템(협업 필터링, 컨텐츠 기반 필터링)
+진행기간 : 2020/04/01 ~ 2020/06/12  
+주요내용 : AI 기반 여행지 추천 서비스  
+본인이 기여한 점 : 웹앱 서비스 백엔드 개발, 여행지 추천 시스템 개발, PM  
+사용한 기술스택 및 지식 : Tensorflow, Scikit-learn, Django, 추천 시스템(협업 필터링, 컨텐츠 기반 필터링)  
 
 ## 서비스 구조 설계
 <img src="https://github.com/radiantprism/Traview/blob/master/traview_architecture.PNG">

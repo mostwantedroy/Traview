@@ -23,7 +23,7 @@
 <img src="https://github.com/radiantprism/Traview/blob/master/tourism_feature.PNG">
 
 ## NER(개체명 인식) : 리뷰에서 여행지 특징 추출  
-<img src="https://github.com/radiantprism/Traview/blob/master/ner_on_review.PNG">
+<img src="https://github.com/radiantprism/Traview/blob/master/ner_on_review.png">
 
 ## Bi-LSTM 모델 설계
 <img src="https://github.com/radiantprism/Traview/blob/master/Bi-LSTM blueprint.PNG">

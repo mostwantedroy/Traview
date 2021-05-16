@@ -20,13 +20,13 @@
 - 리뷰 데이터에 존재하는 여행지의 분위기, 가격, 평가 정보를 추출하는 Bi-LSTM 모델 훈련(사전 기반 BIO Tagging)
 
 ## 여행지 특징 추출
-<img src="https://github.com/radiantprism/Traview/blob/master/tourism_feature.PNG">
+<img src="https://github.com/radiantprism/Traview/blob/master/tourism_feature.PNG">  
 
 ## NER(개체명 인식) : 리뷰에서 여행지 특징 추출  
-<img src="https://github.com/radiantprism/Traview/blob/master/ner_on_review.png">
+<img src="https://github.com/radiantprism/Traview/blob/master/ner_on_review.png">  
 
 ## Bi-LSTM 모델 설계  
-<img src="https://github.com/radiantprism/Traview/blob/master/Bi-LSTM blueprint.PNG">
+<img src="https://github.com/radiantprism/Traview/blob/master/Bi-LSTM blueprint.PNG">  
   
 3. 사용자 취향 맞춤 여행지 추천 시스템 개발  
 - 방문한 여행지에 대한 추천(협엽 필터링)

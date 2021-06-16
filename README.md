@@ -8,6 +8,12 @@
 ## 서비스 구조 설계
 <img src="https://github.com/radiantprism/Traview/blob/master/traview_architecture.PNG">
 
+## 기술적 문제 해결 과정
+1. Scale Out으로 서버 확장시 Session 불일치 문제.
+- 서비스의 지속성을 위해, Scale Out을 선택.
+- Sticky Session 방식으로 문제를 해결. 
+- 트래픽이 더 증가하게 되면, Redis로 Session Server를 따로 구성할 계획.
+
 ## 서비스 플로우 개요
 <img src="https://github.com/radiantprism/Traview/blob/master/traview_service_flow.PNG">
 
